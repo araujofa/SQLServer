@@ -32,3 +32,8 @@ CREATE TABLE Albuns (
 	Id_Estilo INT FOREIGN KEY REFERENCES Estilos (Id_Estilo),
 	Id_Artista INT FOREIGN KEY REFERENCES Artistas (Id_Artista)
 );
+
+SELECT * FROM Usuarios;
+
+ALTER TABLE Usuarios ADD Idade INT;
+ALTER TABLE Usuarios DROP COLUMN Idade;

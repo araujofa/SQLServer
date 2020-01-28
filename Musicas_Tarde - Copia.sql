@@ -12,3 +12,9 @@ CREATE TABLE Artistas (
 	Nome_Artista VARCHAR (200),
 	Id_EstilosMusicais INT FOREIGN KEY REFERENCES EstilosMusicais (Id_EstilosMusicais)
 );
+
+SELECT * FROM Artistas;
+
+ALTER TABLE Artistas ADD Idade INT;
+ALTER TABLE Artistas ADD NomeDoPai VARCHAR (200);
+ALTER TABLE Artistas DROP COLUMN NomeDoPai;
