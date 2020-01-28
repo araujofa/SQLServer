@@ -1,0 +1,37 @@
+--CRIAR BANCO DE DADOS
+
+CREATE DATABASE Biblioteca_Tarde;
+
+USE Biblioteca_Tarde;
+
+CREATE TABLE Autores (
+	IdAutor INT PRIMARY KEY IDENTITY,
+	NomeAutor VARCHAR(200) NOT NULL
+);
+
+
+CREATE TABLE Generos (
+	IdGenero INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR (200)
+);
+
+CREATE TABLE Livros (
+	IdLivro INT PRIMARY KEY IDENTITY,
+	Titulo VARCHAR (200),
+	IdAutor INT FOREIGN KEY REFERENCES Autores (IdAutor),
+	IdGenero INT FOREIGN KEY REFERENCES Generos (IdGenero)
+);
+
+
+SELECT * FROM Generos;
+SELECT * FROM Autores;
+SELECT * FROM Livros;
+
+ALTER TABLE Generos
+ADD Descricao VARCHAR (255);
+
+ALTER TABLE Generos
+ALTER COLUMN Descricao CHAR (100);
+
+ALTER TABLE Generos
+DROP COLUMN Descricao
