@@ -22,11 +22,6 @@ CREATE TABLE Livros (
 	IdGenero INT FOREIGN KEY REFERENCES Generos (IdGenero)
 );
 
-
-SELECT * FROM Generos;
-SELECT * FROM Autores;
-SELECT * FROM Livros;
-
 ALTER TABLE Generos
 ADD Descricao VARCHAR (255);
 
@@ -34,4 +29,21 @@ ALTER TABLE Generos
 ALTER COLUMN Descricao CHAR (100);
 
 ALTER TABLE Generos
-DROP COLUMN Descricao
+DROP COLUMN Descricao;
+
+-- DML 
+
+SELECT * FROM Generos;
+SELECT * FROM Autores;
+SELECT * FROM Livros;
+
+INSERT INTO Generos (Nome) VALUES ('Romance'), ('Comédia'), ('Terror'), ('Suspense'), ('Ação');
+UPDATE Generos SET Nome = 'Aventura' WHERE IdGenero = 5;
+
+INSERT INTO Autores (NomeAutor) VALUES ('Rick Riordan'), ('Stephen King'), ('Augusto Cury'), ('Pedro Gomes'), ('Qualquer um ae');
+DELETE FROM Autores WHERE IdAutor = 5;
+
+INSERT INTO Livros (Titulo, IdAutor, IdGenero) VALUES ('Percy Jackson', 1, 3), ('A torre negra', 2, 5), ('O vendedor de sonhos', 3, 1), ('QualquerTitulo', 4, 2), ('OutroTitulo', 5, 4);
+UPDATE Livros SET IdGenero = 5 WHERE IdLivro = 3;
+DELETE FROM Livros WHERE IdLivro = 5;
+
